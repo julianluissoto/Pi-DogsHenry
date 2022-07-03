@@ -1,0 +1,19 @@
+.navContainer{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(127, 138, 255);
+    
+
+   
+}
+.span{
+
+    margin: 10px
+}
+
+.span:hover{
+    background-color: black;
+    color: white;
+ 
+ 
+}

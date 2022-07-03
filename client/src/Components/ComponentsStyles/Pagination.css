@@ -1,0 +1,31 @@
+.paginationNav{
+    border: 1px solid black;
+display: flexbox;
+justify-content: center;
+background-color: red;
+
+
+
+}
+.pageButton{
+
+    border: 1px solid white;
+    border-radius: 1px;
+}
+.liStyle{
+
+    list-style: none;
+}
+ul li{
+    display: block;
+  
+  text-align: center;
+  padding: 5px;
+}
+li :hover{
+    color: white;
+    background-color: black;
+}
+ul{
+    display: flex;
+}
