@@ -12,12 +12,31 @@ export default function DogCard({
   minLife,
   maxLife,
   id,
+  moreDetail,
 }) {
+  console.log(typeof moreDetail);
   return (
     <div className="dogCardContainer">
+      {moreDetail && (
+        <div>
+          {" "}
+          <p>Temperamentos: {temperament} </p>{" "}
+          <p>Peso Maximo: {maxWeight} Kg</p>
+          <p>Peso Minimo: {minWeight} Kg</p>
+          <p>Altura Maxima: {maxHeight} cm </p>
+          <p>Altura Minima: {minHeight} cm </p>
+          <p>
+            {" "}
+            Esperanza de vida: entre {minLife} y {maxLife} Años
+          </p>
+        </div>
+      )}
+
+      <div className="dogImageContainer">
+        <img className="dogImage" src={image} alt="dogImagen" />
+      </div>
       <div>
-        <img src={image} alt="dogImage" />
-        <h2>Raza: {name}</h2>
+        <h2 className="dogRace">Raza: {name}</h2>
       </div>
 
       <div>

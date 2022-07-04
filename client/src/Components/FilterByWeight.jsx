@@ -7,7 +7,7 @@ export default function FilterByWeigtht() {
   let dispatch = useDispatch();
   function handleWeight(e) {
     dispatch(filterByMaxWeigth(e.target.value));
-    console.log(e.target.value);
+    // console.log(e.target.value);
   }
 
   return (

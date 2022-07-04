@@ -1,14 +1,29 @@
-.navContainer{
+.navContainer {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(45deg, rgb(74, 145, 94), midnightblue);
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: space-around;
     background-color: rgb(127, 138, 255);
-    
+}
 
+.span{
+    color: yellow;
+    margin: 10px;
    
 }
-.span{
-
-    margin: 10px
+a{
+    text-decoration: none;
+    
+}
+input{
+    margin-left: 5px;
+}
+.labelStyle{
+    color: yellow;
 }
 
 .span:hover{

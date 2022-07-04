@@ -25,8 +25,13 @@ export default function FilterByName() {
 
   return (
     <div>
-      <button onClick={handleClick}>Order Z-A</button>
-      <button onClick={handleClick2}>Order A-Z</button>
+      <div>
+        <button onClick={handleClick}>Order Z-A</button>
+      </div>
+      <div>
+        {" "}
+        <button onClick={handleClick2}>Order A-Z</button>
+      </div>
     </div>
   );
 }

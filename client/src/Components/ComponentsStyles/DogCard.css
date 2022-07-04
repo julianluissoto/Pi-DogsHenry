@@ -1,8 +1,48 @@
 .dogCardContainer{
-    width: 50%;
-    height: 50%;
-    border: 2px solid black;
-    margin: auto;
+  
+    border: 2px solid rgb(14, 61, 203);
+    border-radius: 10px;
+    margin: 10px;
+   
     background-color: rgb(0, 255, 102);
-    
+   
 }
+.dogCardContainer:hover{
+  background-color: rgb(30, 0, 255);
+
+
+}
+.dogImageContainer{
+  width: 200px;
+  height: 200px;
+  
+   
+  
+   display: block;
+ margin: 0px auto;
+  
+ 
+}
+.dogImage{
+  border: 3px solid black;
+  border-radius: 2px;
+  object-fit: fill;
+ 
+  }
+  .dogRace{
+    white-space: nowrap;
+text-overflow: ellipsis;
+overflow: hidden;
+display: inherit;
+  }
+
+
+
+
+
+
+h2{
+  background-color: bisque;
+}
+
+

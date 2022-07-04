@@ -1,7 +1,8 @@
 .paginationNav{
     border: 1px solid black;
 display: flexbox;
-justify-content: center;
+flex-wrap: wrap;
+justify-content: space-evenly;
 background-color: red;
 
 
@@ -11,6 +12,13 @@ background-color: red;
 
     border: 1px solid white;
     border-radius: 1px;
+   
+}
+.pageButton:hover{
+    transition-duration: 0.5s;
+    width: 150%;
+    height: 150%;
+    margin: auto;
 }
 .liStyle{
 
@@ -22,9 +30,11 @@ ul li{
   text-align: center;
   padding: 5px;
 }
-li :hover{
+ul li :hover{
     color: white;
     background-color: black;
+   
+
 }
 ul{
     display: flex;

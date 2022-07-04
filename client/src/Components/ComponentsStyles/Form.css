@@ -1,0 +1,11 @@
+.dogBuildContainer{
+   margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    
+    align-items: center;
+}
+.cardContainer{
+    width: 50%;
+    height: 100%
+}

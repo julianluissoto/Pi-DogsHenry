@@ -4,13 +4,13 @@ const getAllTemperaments = "getAllTemperaments";
 const getDogDetails = "getDogDetails";
 const cleanDetails = "cleanDetails";
 const filterDogsByName = "filterDogsByName";
-const backupDogsForFiltering = "filterByName";
+
 const orderByNameD = "orderByNameD";
 const orderByNameA = "orderByNameA";
 const filterDogsByTemp = "filterDogsByTemp";
 const myDogs = "myDogs";
 const filterDogsByWeight = "filterDogsByWeight";
-const deleteDogFromDB = "deleteDogFromDB";
+const filterCreator = "filterCreator";
 
 export const getDogs = () => {
   return async (dispatch) => {
@@ -59,12 +59,12 @@ export const cleanDetail = () => {
     dispatch({ type: cleanDetails });
   };
 };
-export const filterByName = (name) => {
+/* export const filterByName = (name) => {
   return async (dispatch) => {
     let findedDog = await axios.get(`http://localhost:3001/dog?name=${name}`);
     //  console.log(findedDog.data);
   };
-};
+}; */
 
 export const orderByNameDesc = () => {
   return (dispatch) => {
@@ -117,8 +117,9 @@ export const deleteDog = (dogToDeleteId) => {
       })
       .catch((e) => console.log(e));
   };
-
-  /* return function (dispatch) {
-    return dispatch({ type: deleteDogFromDB, payload: dogToDelete });
-  }; */
+};
+export const filterBycreator = (typeOfCreator) => {
+  return function (dispatch) {
+    dispatch({ type: filterCreator, payload: typeOfCreator });
+  };
 };

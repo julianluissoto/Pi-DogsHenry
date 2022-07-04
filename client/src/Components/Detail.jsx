@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import Nav from "./Nav";
+import "./ComponentsStyles/Detail.css";
 
 export default function DogDetail() {
   const { id } = useParams();
@@ -28,37 +29,47 @@ export default function DogDetail() {
   return (
     <div>
       <Nav />
+      <div className="detailContainer">
+        <div>
+          {" "}
+          <img
+            className="imgDetail"
+            src={dogDetails ? dogDetails.image : dogDetails2?.image}
+            alt="aqui va la imagen"
+          />
+        </div>
 
-      <img
-        src={dogDetails ? dogDetails.image : dogDetails2?.image}
-        alt="aqui va la imagen"
-      />
-      <h1>{dogDetails ? dogDetails.Nombre : dogDetails2?.Nombre}</h1>
-      <h2>
-        Peso Maximo:{" "}
-        {dogDetails ? dogDetails.PesoMaximo : dogDetails2?.PesoMaximo}
-      </h2>
-      <h2>
-        Peso Minimo:{" "}
-        {dogDetails ? dogDetails.PesoMinimo : dogDetails2?.PesoMinimo}
-      </h2>
-      <h2>
-        Altura Maxima:{" "}
-        {dogDetails ? dogDetails.AlturaMaxima : dogDetails2?.AlturaMaxima} Cm
-      </h2>
-      <h2>
-        Altura Minima:{" "}
-        {dogDetails ? dogDetails.AlturaMinima : dogDetails2?.AlturaMinima} Cm
-      </h2>
-      <h2>
-        Suele vivir entre{" "}
-        {dogDetails ? dogDetails.VidaMinima : dogDetails2?.VidaMinima} y{" "}
-        {dogDetails ? dogDetails.VidaMaxima : dogDetails2?.VidaMaxima} Años
-      </h2>
-      <h2>
-        Temperamento:{" "}
-        {dogDetails ? dogDetails.Temperamento : dogDetails2?.Temperamento}
-      </h2>
+        <div className="dogDetailsContainer">
+          <h1>{dogDetails ? dogDetails.Nombre : dogDetails2?.Nombre}</h1>
+          <h2>
+            Peso Maximo:{" "}
+            {dogDetails ? dogDetails.PesoMaximo : dogDetails2?.PesoMaximo}
+          </h2>
+          <h2>
+            Peso Minimo:{" "}
+            {dogDetails ? dogDetails.PesoMinimo : dogDetails2?.PesoMinimo}
+          </h2>
+          <h2>
+            Altura Maxima:{" "}
+            {dogDetails ? dogDetails.AlturaMaxima : dogDetails2?.AlturaMaxima}{" "}
+            Cm
+          </h2>
+          <h2>
+            Altura Minima:{" "}
+            {dogDetails ? dogDetails.AlturaMinima : dogDetails2?.AlturaMinima}{" "}
+            Cm
+          </h2>
+          <h2>
+            Suele vivir entre{" "}
+            {dogDetails ? dogDetails.VidaMinima : dogDetails2?.VidaMinima} y{" "}
+            {dogDetails ? dogDetails.VidaMaxima : dogDetails2?.VidaMaxima} Años
+          </h2>
+          <h2>
+            Temperamento:{" "}
+            {dogDetails ? dogDetails.Temperamento : dogDetails2?.Temperamento}
+          </h2>
+        </div>
+      </div>
     </div>
   );
 }

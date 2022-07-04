@@ -6,7 +6,6 @@ import loading from "../images/giphy.gif";
 
 import "./ComponentsStyles/AllDogs.css";
 import Paginate from "./Pagination";
-import { getDogs } from "../Redux/Actions";
 
 export default function AllDogs() {
   let dogsState = useSelector((state) => state.filters);
@@ -35,7 +34,7 @@ export default function AllDogs() {
           allDogs={dogsState.length}
           paginado={paginado}
         />
-        <div className="allDogsContanier">
+        <div className="allDogsContainer">
           {dogsState.length > 0 ? (
             currentDogs.map((el) => {
               return (
@@ -51,6 +50,7 @@ export default function AllDogs() {
                   minWeight={el.PesoMinimo}
                   maxLife={el.VidaMaxima}
                   minLife={el.VidaMinima}
+                  moreDetail={false}
                 />
               );
             })

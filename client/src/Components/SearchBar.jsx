@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getDogs, searchByName } from "../Redux/Actions";
 
 //import { Redirect } from "react-router-dom";
@@ -22,7 +22,9 @@ export default function SearchBar() {
 
   return (
     <div>
-      <label htmlFor="searchBar">Find your Dog</label>
+      <label className="labelStyle" htmlFor="searchBar">
+        Find your Dog
+      </label>
       <input
         type="text"
         name="searchBar"
