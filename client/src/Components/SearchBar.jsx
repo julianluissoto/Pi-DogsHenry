@@ -3,17 +3,13 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getDogs, searchByName } from "../Redux/Actions";
 
-//import { Redirect } from "react-router-dom";
-
 export default function SearchBar() {
-  // let redirect = Redirect();
   const [inputText, setInputText] = useState("");
 
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getDogs());
   }, [dispatch]);
-  //let dogsState = useSelector((state) => state.backupDogsForFiltering);
 
   const handleChange = function (e) {
     setInputText(e.target.value);

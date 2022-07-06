@@ -1,6 +1,6 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 import DogCard from "./DogCard";
 import loading from "../images/giphy.gif";
 
@@ -51,6 +51,7 @@ export default function AllDogs() {
                   maxLife={el.VidaMaxima}
                   minLife={el.VidaMinima}
                   moreDetail={false}
+                  moreStyles={true}
                 />
               );
             })

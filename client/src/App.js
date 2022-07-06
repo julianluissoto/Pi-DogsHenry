@@ -1,5 +1,5 @@
 import "./App.css";
-import { Route, useParams } from "react-router-dom";
+import { Route } from "react-router-dom";
 import Detail from "./Components/Detail";
 import Home from "./vistas/Home";
 import Form from "./Components/Form";

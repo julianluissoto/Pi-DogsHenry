@@ -14,7 +14,7 @@ export default function MyOwnDogs() {
   useEffect(() => {
     dispatch(getDogs());
     dispatch(showMyDogs());
-  }, []);
+  }, [dispatch]);
 
   const handleDelete = (dogToDelete) => {
     let confirmacion = prompt("Se eliminara de Tus Dogs: type Y/N");
@@ -29,36 +29,41 @@ export default function MyOwnDogs() {
   return (
     <>
       <Nav />
-      <h1>MY DOGS CREATED</h1>
+      <h1 className="myDogsTitle">MY DOGS </h1>
 
-      <div className="MyDogsContainer">
+      <div>
         {myOwnDogsCreated.length > 0 ? (
           myOwnDogsCreated.map((el) => {
             return (
-              <div key={el.id}>
-                <div>
-                  <button onClick={() => handleDelete(el.id)}>X</button>
+              <div className="my-dog-card-container" key={el.id}>
+                <button
+                  className="myDogDeleteButton"
+                  onClick={() => handleDelete(el.id)}
+                >
+                  X
+                </button>
+                <div className="allDogsContainer">
+                  <DogCard
+                    id={el.id}
+                    image={el.image}
+                    key={el.Nombre}
+                    name={el.Nombre}
+                    maxHeight={el.AlturaMaxima}
+                    minHeight={el.AlturaMinima}
+                    temperament={el.Temperamento}
+                    maxWeight={el.PesoMaximo}
+                    minWeight={el.PesoMinimo}
+                    minLife={el.VidaMinima}
+                    maxLife={el.VidaMaxima}
+                    moreStyles={false}
+                  />
                 </div>
-
-                <DogCard
-                  id={el.id}
-                  image={el.image}
-                  key={el.Nombre}
-                  name={el.Nombre}
-                  maxHeight={el.AlturaMaxima}
-                  minHeight={el.AlturaMinima}
-                  temperament={el.Temperamento}
-                  maxWeight={el.PesoMaximo}
-                  minWeight={el.PesoMinimo}
-                  minLife={el.VidaMinima}
-                  maxLife={el.VidaMaxima}
-                />
               </div>
             );
           })
         ) : (
           <div>
-            <img src={loading} alt="" />
+            <img className="loadingImg" src={loading} alt="" />
             <h1>No has creado Nuevos Perros</h1>
           </div>
         )}

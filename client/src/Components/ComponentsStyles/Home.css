@@ -1,8 +1,14 @@
+
+
+
 .allDogsContainer{
     display: flex;
    flex-wrap: wrap;
    justify-content: space-around;
-   background-color: rgb(85, 3, 3);
+   background-image: url("../../images/landing.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   height: 100vh;
    
    
 }
@@ -11,13 +17,23 @@
 
 .title{
     margin-top: 50px;
+    background: rgb(34,193,195);
+background: radial-gradient(circle, rgba(34,193,195,1) 8%, rgba(103,127,185,1) 51%, rgba(182,52,174,0.7847514005602241) 100%);
 }
 
 
 
 .filterStyles{
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 margin: auto;
-padding:5px
+padding:5px;
+background: rgb(34,193,195);
+background: radial-gradient(circle, rgba(34,193,195,1) 8%, rgba(103,127,185,1) 51%, rgba(182,52,174,0.7847514005602241) 100%);
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: larger;
    
 }
 .createContainer{
@@ -25,6 +41,20 @@ padding:5px
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background: rgb(34,193,195);
+background: radial-gradient(circle, rgba(34,193,195,1) 8%, rgba(103,127,185,1) 51%, rgba(182,52,174,0.7847514005602241) 100%);
+}
+select {
+  font-size: medium;
+  margin: 40px;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+  color: yellow;
+}
+option{
+  color: black;
+   font-family: 'Josefin Sans', sans-serif;
 }
 
 

@@ -13,14 +13,14 @@ export default function DogCard({
   maxLife,
   id,
   moreDetail,
+  moreStyles,
 }) {
-  console.log(typeof moreDetail);
   return (
-    <div className="dogCardContainer">
+    <div className={moreStyles ? "dogCardContainer" : "myOwnDog"}>
       {moreDetail && (
         <div>
           {" "}
-          <p>Temperamentos: {temperament} </p>{" "}
+          <p>Temperamentos: {temperament + " "} </p>{" "}
           <p>Peso Maximo: {maxWeight} Kg</p>
           <p>Peso Minimo: {minWeight} Kg</p>
           <p>Altura Maxima: {maxHeight} cm </p>
@@ -32,17 +32,14 @@ export default function DogCard({
         </div>
       )}
 
-      <div className="dogImageContainer">
+      <div>
         <img className="dogImage" src={image} alt="dogImagen" />
-      </div>
-      <div>
-        <h2 className="dogRace">Raza: {name}</h2>
-      </div>
-
-      <div>
-        <Link to={`details/${id}`}>
-          <button className="toDetail"> to Dog Detail</button>
-        </Link>
+        <div>
+          <h2 className={moreStyles ? "dogRace " : "dogRace1"}>Raza: {name}</h2>
+          <Link to={`details/${id}`}>
+            <button className="toDetail"> to Dog Detail</button>
+          </Link>
+        </div>
       </div>
     </div>
   );

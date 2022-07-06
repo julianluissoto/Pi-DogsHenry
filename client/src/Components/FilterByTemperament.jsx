@@ -10,14 +10,14 @@ import {
 export default function FilterByTemperament() {
   let dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getDogs());
+    // dispatch(getDogs());
     dispatch(getTemperaments());
   }, [dispatch]);
 
   let temperamentsList = useSelector((state) => state.allTemperaments);
 
   function handleTemperaments(e) {
-    if (e.target.value == "All") return dispatch(getDogs());
+    if (e.target.value === "All") return dispatch(getDogs());
     dispatch(filterByTemperament(e.target.value));
   }
   return (

@@ -1,0 +1,28 @@
+.A-Z-Button{
+     
+        padding: 0.3em 1em;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: #000;
+        background-color: #fff;
+        border: 1px solid violet;
+        border-radius:10px;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease 0s;
+        cursor: pointer;
+        outline: none;
+        margin: 1%;
+      }
+      
+      .A-Z-Button:hover {
+        background-color: #23c483;
+        box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+        color: #fff;
+        transform: translateY(-7px);
+      }
+      
+     .A-Z-Button:active {
+        transform: translateY(-1px);
+      }

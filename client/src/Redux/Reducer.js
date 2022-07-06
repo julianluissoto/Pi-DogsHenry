@@ -48,9 +48,9 @@ export default function appReducer(state = inititalState, action) {
       return {
         ...state,
         filters: [...state.filters].sort((a, b) => {
-          // magic trick by rafa
           if (a.Nombre > b.Nombre) return -1;
           if (a.Nombre < b.Nombre) return 1;
+          else return 0;
         }),
       };
     case "orderByNameA":
@@ -59,6 +59,7 @@ export default function appReducer(state = inititalState, action) {
         filters: [...state.filters].sort((a, b) => {
           if (a.Nombre < b.Nombre) return -1;
           if (a.Nombre > b.Nombre) return 1;
+          else return 0;
         }),
       };
     case "filterDogsByTemp":
@@ -104,18 +105,18 @@ export default function appReducer(state = inititalState, action) {
       };
 
     case "filterCreator":
-      if (action.payload === "Api") {
+      /* if (action.payload === "Api") {
         return {
           ...state,
-          filters: state.allDogs,
-        };
-      } else if (action.payload === "Db") {
-        return {
-          ...state,
-          filters: state.myDogs,
-        };
-      }
+          filters: state.filters,
+        }; */
 
+      return {
+        ...state,
+        filters: state.myDogs,
+      };
+
+      break;
     default:
       return state;
   }

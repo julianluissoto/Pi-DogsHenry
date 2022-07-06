@@ -8,6 +8,13 @@
     align-items: center;
     justify-content: space-around;
     background-color: rgb(127, 138, 255);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: larger;
+}
+
+.home-Logo{
+    width: 45px;
+    height: 45px;
 }
 
 .span{

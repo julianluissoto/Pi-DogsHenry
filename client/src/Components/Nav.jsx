@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import "./ComponentsStyles/Nav.css";
+import home from "../images/home.png";
 
 export default function Nav() {
   return (
@@ -10,7 +11,7 @@ export default function Nav() {
         <span className="span">My Dogs</span>
       </Link>
       <Link to="/home">
-        <span className="span">Home</span>
+        <img className="home-Logo" src={home} alt="" />
       </Link>
       <SearchBar />
     </div>

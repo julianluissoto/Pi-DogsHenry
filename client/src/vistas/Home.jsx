@@ -29,17 +29,19 @@ export default function Home() {
       </div>
       <div className="homeContainer">
         <div className="filterStyles">
-          <FilterByName />
-        </div>
-        <div className="filterStyles">
-          <FilterByTemperament />
-        </div>
-        <div>
-          <FilterByCreator />
-        </div>
+          <div>
+            <FilterByName />
+          </div>
+          <div>
+            <FilterByTemperament />
+          </div>
+          <div>
+            <FilterByCreator />
+          </div>
 
-        <div className="filterStyles">
-          <FilterByWeigtht />
+          <div>
+            <FilterByWeigtht />
+          </div>
         </div>
       </div>
       <div className="allDogsContainer">

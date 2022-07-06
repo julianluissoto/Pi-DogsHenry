@@ -2,7 +2,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getDogs, getTemperaments } from "../Redux/Actions";
-import { MultiSelect } from "react-multi-select-component";
 
 import { createDog, showMyDogs } from "../Redux/Actions";
 import Nav from "./Nav";
@@ -46,6 +45,13 @@ export default function Form() {
       ...newDog,
       [e.target.name]: numberInputFormated,
     });
+
+    setError(
+      validate({
+        ...newDog,
+        [e.target.name]: numberInputFormated,
+      })
+    );
   };
 
   const handleChangeImage = function (e) {
@@ -180,7 +186,7 @@ export default function Form() {
                 })}
               </select>
             </div>
-            {error.temperament && <p>{error.temperament}</p>}
+
             <input
               type="text"
               name="image"
@@ -219,20 +225,18 @@ export function validate(newDog) {
   if (!newDog.name) {
     errors.name = "Dog Name is required";
   }
-  if (newDog.temperament.length == 0) {
-    errors.temperament = "Temperament is required";
-  }
+
   if (!newDog.maxWeight) {
-    errors.maxWeight = "Weight is required";
+    errors.maxWeight = "MaxWeight is required";
   }
   if (!newDog.minWeight) {
-    errors.minWeight = "Weight is required";
+    errors.minWeight = "MinWeight is required";
   }
   if (!newDog.maxHeight) {
-    errors.maxHeight = "Weight is required";
+    errors.maxHeight = "MaxHeight is required";
   }
   if (!newDog.minHeight) {
-    errors.minHeight = "Weight is required";
+    errors.minHeight = "MinHeight is required";
   }
 
   return errors;
