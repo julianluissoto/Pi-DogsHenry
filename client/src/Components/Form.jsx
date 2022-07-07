@@ -34,10 +34,12 @@ export default function Form() {
     minWeight: "",
     minHeight: "",
     maxHeight: "",
+    imageLength: "",
 
     temperament: [],
   });
   const [buttonState, setbuttonState] = useState(true);
+
   const handleChangeNumber = function (e) {
     const numberInputFormated = e.target.value.replace(/\D/g, "");
 
@@ -55,6 +57,8 @@ export default function Form() {
   };
 
   const handleChangeImage = function (e) {
+    if (e.target.value.length > 200)
+      setError({ ...error, imageLength: "URL TO LONG" });
     setNewDog({
       ...newDog,
       [e.target.name]: e.target.value,
@@ -80,7 +84,9 @@ export default function Form() {
       ...newDog,
       temperament: [...new Set([...newDog.temperament, e.target.value])],
     });
-    if (newDog.temperament.length > 0) setbuttonState(false);
+    return newDog.temperament.length > 1
+      ? setbuttonState(false)
+      : setbuttonState(true);
   }
   console.log(newDog.temperament);
   const handleSubmit = function (e) {
@@ -107,7 +113,11 @@ export default function Form() {
                 placeholder="ingrese el nombre de la raza"
                 onChange={handleChange}
               />
-              {error.name && <p>{error.name}</p>}
+              {error.name && (
+                <p style={{ color: "red", fontFamily: "sans-serif" }}>
+                  {error.name}
+                </p>
+              )}
             </div>
             <div>
               <label>Peso Maximo: </label>
@@ -118,7 +128,11 @@ export default function Form() {
                 value={newDog.maxWeight}
                 onChange={handleChangeNumber}
               />
-              {error.maxWeight && <p>{error.maxWeight}</p>}
+              {error.maxWeight && (
+                <p style={{ color: "red", fontFamily: "sans-serif" }}>
+                  {error.maxWeight}
+                </p>
+              )}
             </div>
             <div>
               <label>Peso Minimo: </label>
@@ -140,7 +154,11 @@ export default function Form() {
                 value={newDog.maxHeight}
                 onChange={handleChangeNumber}
               />
-              {error.maxHeight && <p>{error.maxHeight}</p>}
+              {error.maxHeight && (
+                <p style={{ color: "red", fontFamily: "sans-serif" }}>
+                  {error.maxHeight}
+                </p>
+              )}
             </div>
             <div>
               <label>Altura Minima: </label>
@@ -151,7 +169,11 @@ export default function Form() {
                 value={newDog.minHeight}
                 onChange={handleChangeNumber}
               />
-              {error.minHeight && <p>{error.minHeight}</p>}
+              {error.minHeight && (
+                <p style={{ color: "red", fontFamily: "sans-serif" }}>
+                  {error.minHeight}
+                </p>
+              )}
             </div>
 
             <div>
@@ -177,14 +199,20 @@ export default function Form() {
             <div>
               <label>Temperamento: </label>
               <select name="" id="" onChange={handleTemperaments}>
-                {temperamenList.map((el) => {
-                  return (
-                    <option key={el} value={el}>
-                      {el}
-                    </option>
-                  );
-                })}
+                {newDog.temperament.length < 3 &&
+                  temperamenList.map((el) => {
+                    return (
+                      <option key={el} value={el}>
+                        {el}
+                      </option>
+                    );
+                  })}
               </select>
+              {newDog.temperament.length <= 2 && (
+                <p style={{ color: "red", fontFamily: "sans-serif" }}>
+                  Max Temperament Quantity is 3
+                </p>
+              )}
             </div>
 
             <input
@@ -195,26 +223,29 @@ export default function Form() {
               placeholder="Ingrese la URL de la Imagen"
               required
             />
-
+            {error.imageLength && (
+              <p style={{ color: "red", fontFamily: "sans-serif" }}>
+                {error.imageLength}
+              </p>
+            )}
             <button disabled={buttonState} type="submit">
               CREAR
             </button>
           </form>
         </div>
-        <div className="cardContainer">
-          <DogCard
-            image={newDog.image}
-            name={newDog.name}
-            maxHeight={newDog.maxHeight}
-            minHeight={newDog.minHeight}
-            temperament={newDog.temperament}
-            maxWeight={newDog.maxWeight}
-            minWeight={newDog.minWeight}
-            maxLife={newDog.maxLife}
-            minLife={newDog.minLife}
-            moreDetail={true}
-          />
-        </div>
+
+        <DogCard
+          image={newDog.image}
+          name={newDog.name}
+          maxHeight={newDog.maxHeight}
+          minHeight={newDog.minHeight}
+          temperament={newDog.temperament}
+          maxWeight={newDog.maxWeight}
+          minWeight={newDog.minWeight}
+          maxLife={newDog.maxLife}
+          minLife={newDog.minLife}
+          moreDetail={true}
+        />
       </div>
     </div>
   );

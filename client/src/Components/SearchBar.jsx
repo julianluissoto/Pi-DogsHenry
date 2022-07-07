@@ -27,32 +27,6 @@ export default function SearchBar() {
         value={inputText}
         onChange={handleChange}
       />
-
-      {/* {dogsState
-        .filter((dog) => {
-          if (inputText == "") {
-            return dog;
-          } else if (
-            dog.Nombre.toLowerCase().includes(inputText.toLowerCase())
-          ) {
-            console.log(`entre al filter del searchbar${dog}`);
-            return dog;
-          }
-        })
-
-        .map((el) => {
-          return (
-            <DogCard
-              key={el.id}
-              id={el.id}
-              image={el.image}
-              name={el.Nombre}
-              heigth={el.Altura}
-              temperament={el.Temperamento}
-              weigth={el.Peso}
-            />
-          );
-        })} */}
     </div>
   );
 }

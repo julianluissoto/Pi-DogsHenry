@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import DogCard from "./DogCard";
 import { getDogs, showMyDogs, deleteDog } from "../Redux/Actions";
 import loading from "../images/giphy.gif";
+import "../Components/ComponentsStyles/Home.css";
 
 import "./ComponentsStyles/MyDogsStyle.css";
 import Nav from "./Nav";
@@ -31,32 +32,35 @@ export default function MyOwnDogs() {
       <Nav />
       <h1 className="myDogsTitle">MY DOGS </h1>
 
-      <div>
+      <div className="my-dogs-full-container">
         {myOwnDogsCreated.length > 0 ? (
           myOwnDogsCreated.map((el) => {
             return (
-              <div className="my-dog-card-container" key={el.id}>
-                <button
-                  className="myDogDeleteButton"
-                  onClick={() => handleDelete(el.id)}
-                >
-                  X
-                </button>
-                <div className="allDogsContainer">
-                  <DogCard
-                    id={el.id}
-                    image={el.image}
-                    key={el.Nombre}
-                    name={el.Nombre}
-                    maxHeight={el.AlturaMaxima}
-                    minHeight={el.AlturaMinima}
-                    temperament={el.Temperamento}
-                    maxWeight={el.PesoMaximo}
-                    minWeight={el.PesoMinimo}
-                    minLife={el.VidaMinima}
-                    maxLife={el.VidaMaxima}
-                    moreStyles={false}
-                  />
+              <div>
+                <div key={el.id}>
+                  <button
+                    className="myDogDeleteButton"
+                    onClick={() => handleDelete(el.id)}
+                  >
+                    X
+                  </button>
+                  <div className="allDogsContainer">
+                    <DogCard
+                      id={el.id}
+                      image={el.image}
+                      key={el.Nombre}
+                      name={el.Nombre}
+                      maxHeight={el.AlturaMaxima}
+                      minHeight={el.AlturaMinima}
+                      temperament={el.Temperamento}
+                      maxWeight={el.PesoMaximo}
+                      minWeight={el.PesoMinimo}
+                      minLife={el.VidaMinima}
+                      maxLife={el.VidaMaxima}
+                      moreStyles={false}
+                      buttonDetail={true}
+                    />
+                  </div>
                 </div>
               </div>
             );

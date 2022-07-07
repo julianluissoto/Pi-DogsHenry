@@ -1,24 +1,24 @@
 import "./App.css";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Detail from "./Components/Detail";
 import Home from "./vistas/Home";
 import Form from "./Components/Form";
 import MyOwnDogs from "./Components/MyOwnDogs";
 import Landing from "./Components/Landing";
+import NotFound from "./Components/NotFound";
 
 function App() {
   return (
     <div className="App">
-      <Route exact path={"/"}>
-        <Landing />
-      </Route>
+      <Switch>
+        <Route exact path={"/"}>
+          <Landing />
+        </Route>
 
-      <div>
         <Route exact path={"/form"}>
           <Form />
         </Route>
-      </div>
-      <div>
+
         <Route exact path="/details/:id">
           {" "}
           <Detail />
@@ -30,7 +30,10 @@ function App() {
         <Route exact path={"/myOwnDogs"}>
           <MyOwnDogs />
         </Route>
-      </div>
+        <Route path={"/*"}>
+          <NotFound />
+        </Route>
+      </Switch>
     </div>
   );
 }

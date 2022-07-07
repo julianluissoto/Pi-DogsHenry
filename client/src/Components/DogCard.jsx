@@ -14,6 +14,7 @@ export default function DogCard({
   id,
   moreDetail,
   moreStyles,
+  buttonDetail,
 }) {
   return (
     <div className={moreStyles ? "dogCardContainer" : "myOwnDog"}>
@@ -32,14 +33,17 @@ export default function DogCard({
         </div>
       )}
 
-      <div>
+      <div className="dog-Image-container">
+        {" "}
         <img className="dogImage" src={image} alt="dogImagen" />
-        <div>
-          <h2 className={moreStyles ? "dogRace " : "dogRace1"}>Raza: {name}</h2>
-          <Link to={`details/${id}`}>
-            <button className="toDetail"> to Dog Detail</button>
-          </Link>
-        </div>
+      </div>
+
+      <div className={moreStyles ? "" : "container-card"}>
+        <h2 className={moreStyles ? "dogRace " : "dogRace1"}>Raza: {name}</h2>
+        <Link to={`details/${id}`}>
+          {buttonDetail && <button className="toDetail"> to Dog Detail</button>}
+          {/*   <button className="toDetail"> to Dog Detail</button> */}
+        </Link>
       </div>
     </div>
   );

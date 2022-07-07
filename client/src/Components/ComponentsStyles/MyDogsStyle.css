@@ -17,23 +17,14 @@ height: 40px;
 transition-duration: 0.3s;
 
 }
-
-
-
-
-
-/* 
-.myDogCard{
-   width: 50%;
-   height:  50%;
-   
- margin: auto;
-}
-.allDogsContainer{
-    background-color: red;
+.my-dogs-full-container{
     
-   }
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  
 
+}
 
 
 .loadingImg{
@@ -43,6 +34,11 @@ transition-duration: 0.3s;
 .dogImage{
     border: 3px solid rgb(213, 130, 14);
     border-radius: 2px;
+}
    
-   
-    } */
+
+
+
+
+
+ 

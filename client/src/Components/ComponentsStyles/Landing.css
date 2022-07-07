@@ -1,7 +1,4 @@
-*{
-    margin: 0;
-    padding: 0;
-}
+
 
 .landingBackground{
 
@@ -10,25 +7,84 @@
     background-position: center;
     background-size: cover;
     display:  flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
    
    
     
 }
-.lets-go-icon{
-    width: 20%;
-    height: 25%;
-    text-align: center;
+.enterIcon{
+ 
+    width: 100px;
+    height:100px;
+    text-align: right;
+    box-shadow: rgba(7, 216, 49, 0.4) 0px 30px 90px;
 }
 .icons-container{
     width: 50%;
     display:  flex;
-    
-    justify-content: center;
+    margin-left: 40%;
+    margin-top: 20%;
+   
     align-content: center;
    
 } 
+.welcome-greating{
+    color: white;
+    font-size: 100px ;
+  }
+    .greatings-container{
+        padding: 15px;
+       
+text-align: left;
+    }
+
+
+/* .container {
+    display: block;
+    max-width: 500px;
+    margin: auto;
+    padding: 10px;
+   
+  }
+  .welcome-greating{
+    color: white;
+    font-size: 100px ;
+  }
+    .greatings-container{
+        padding: 15px;
+       
+text-align: left;
+    }
+
+.maquina-escribir {
+    font-size: 30px;
+    margin-top: -30%;
+   
+    position: relative;
+    color: yellow;
+  }
+  
+  .maquina-escribir::after {
+    content: "";
+    border-left: 3px solid black;
+    background-color: #050507;
+    
+    
+    right: 0;
+    height: 100%;
+    position: absolute;
+    animation: maquinaescribir 3s infinite alternate steps(25);
+  }
+  
+  @keyframes maquinaescribir {
+    from {
+      width: 100%;
+    }
+    to {
+      width: 0;
+    }
+  } */
     
    
    

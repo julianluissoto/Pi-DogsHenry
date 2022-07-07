@@ -52,6 +52,7 @@ export default function AllDogs() {
                   minLife={el.VidaMinima}
                   moreDetail={false}
                   moreStyles={true}
+                  buttonDetail={true}
                 />
               );
             })

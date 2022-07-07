@@ -1,17 +1,8 @@
 
-.allDogsContainer{
-    display: flex;
-   flex-wrap: wrap;
-   justify-content: space-around;
-   background-image: url("../../images/landing.jpg");
-   background-repeat: no-repeat;
-   background-size: cover;
-   height: 100vh;
-   
-   
-}
-.allDogsContainer img{
+
+.allDogsContainer {
     width: 80%;
     height:50%;
     text-align: center;
+    margin: auto;
 }

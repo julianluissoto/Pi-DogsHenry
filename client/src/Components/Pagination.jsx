@@ -14,7 +14,7 @@ export default function Paginate({ dogsPerPage, allDogs, paginado }) {
         {pageNumbers &&
           pageNumbers.map((number) => (
             <div key={number}>
-              <li className="liStyle" onClick={() => paginado(number)}>
+              <li onClick={() => paginado(number)}>
                 <button className="pageButton" type="button">
                   {number}
                 </button>
