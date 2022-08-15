@@ -1,4 +1,5 @@
 .navContainer {
+    z-index: 999;
     position: fixed;
     top: 0;
     width: 100%;
@@ -24,6 +25,8 @@
 }
 a{
     text-decoration: none;
+    width: 25%;
+    height: auto;
     
 }
 input{
@@ -31,6 +34,10 @@ input{
 }
 .labelStyle{
     color: yellow;
+   
+}
+.labelStyleNone{
+    display: none;
 }
 
 .span:hover{

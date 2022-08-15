@@ -9,7 +9,7 @@ const Refresh = () => {
   };
   return (
     <div>
-      <button className="button-33" onClick={handleRefresh}>
+      <button className="refresh-Button" onClick={handleRefresh}>
         REFRESH
       </button>
     </div>

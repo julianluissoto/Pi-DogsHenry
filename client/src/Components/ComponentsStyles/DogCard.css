@@ -1,81 +1,117 @@
 
 .myOwnDog{
 
-  width: 300px;
-  height:350px;
+  width: 500px;
+  height:650px;
     border: 2px solid rgb(14, 61, 203);
     border-radius: 10px;
-    background-color: rgb(4, 50, 52);
+    background-color: rgb(142, 7, 54);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    color: coral;
   }
+
   
-  
-  .dogCardContainer{
-    width: 200px;
-    height: 300px;
+  /* .dogCardContainer{
+   
       border: 2px solid rgb(14, 61, 203);
       border-radius: 10px;
       margin: 10px;
+      background: rgb(15,15,64);
+      background: linear-gradient(0deg, rgba(15,15,64,1) 16%, rgba(89,49,16,0.9051995798319328) 51%, rgba(182,52,174,0.7847514005602241) 100%);
+      width: 300px;
+      height: 530px;
      
-      background-image: url("../../images/dogsCard.jpg");
-     
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-   
-  }
-  .dog-Image-container{
-    width:200px;
-    height: 200px;
-    margin: auto;
-  }
-  
-  
     
-  .dogImage{
-    margin-top: 5px;
-   width: 90%;
-   height: 80%;
-   background-size: cover;
-   border-radius: 10px;
+
+
+     
+     
    
+  } */
+
+  .dogCardContainer {
+    -webkit-animation: sqrA 1s ;
+            animation: sqrA 1S ;
+            border: 2px solid rgb(14, 61, 203);
+      border-radius: 10px;
+      margin: 10px;
+      background: rgb(15,15,64);
+      background: linear-gradient(0deg, rgba(15,15,64,1) 16%, rgba(89,49,16,0.9051995798319328) 51%, rgba(182,52,174,0.7847514005602241) 100%);
+      width: 300px;
+      
     }
+    
+    
+    @keyframes sqrA {
+      from {
+        -webkit-transform: scale(0.5)
+                
+      }
+      to {
+        -webkit-transform: scale(1)
+                
+      }
+    }
+     
+    
+       
+    
+    
+    
+    
+ 
+
+      
+ 
+  
+  
+ /*  .dogCardContainer:hover{
+ transform: scale(110%); 
+ z-index: 20; 
+
+transform: rotate(0)S
+
+
+  } */
+
+  
     .dogRace{
-      background: rgb(34,193,195);
-  background: radial-gradient(circle, rgba(34,193,195,1) 8%, rgba(89,49,16,0.9051995798319328) 51%, rgba(182,52,174,0.7847514005602241) 100%);
-      white-space: nowrap;
+      margin: auto;
+      color: yellow;
+     
   text-overflow: ellipsis;
   overflow: hidden;
   display: inherit;
     }
     .dogRace1{
-     background-color: rgb(83, 5, 5);
+     border: 1px solid black;
+     
 
   
     }
    
    
     
-    .toDetail{
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      font-size: 15px;
-      background: royalblue;
-      color: white;
-     
-      cursor: pointer;
-      padding: 10px;
-      border: none;
-      border-radius: 10px;
-     
-      
+    
+     .dogWeight{
+      font-size: 25px;
+      color: darkkhaki;
+
      }
-     .toDetail:hover{
-      background: rgb(17, 71, 232);
-      color: yellowgreen;
-      font-size: 18px;
+     h2{
+      color: chartreuse;
+      font-size: 28px;
      }
+     h3{
+      color: aqua;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      display: inherit;
+     }
+     
   
    
    

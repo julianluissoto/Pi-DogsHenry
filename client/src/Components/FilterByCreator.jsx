@@ -16,7 +16,7 @@ const FilterByCreator = () => {
   }
 
   return (
-    <div>
+    <div className="filter">
       <label>Filter By Creator: </label>
       <select name="" id="" onChange={handleCreator}>
         <option value="">Select A Source</option>

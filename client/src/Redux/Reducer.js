@@ -92,7 +92,31 @@ export default function appReducer(state = inititalState, action) {
         ...state,
         filters: [...sortedByWeight],
       };
-
+    case "filterDogsByHeight":
+      const sortedByHeight =
+        action.payload === "min_height"
+          ? state.backupDogsForFiltering.sort((a, b) => {
+              if (parseInt(a.AlturaMinima) > parseInt(b.AlturaMinima)) {
+                return 1;
+              }
+              if (parseInt(b.AlturaMinima) > parseInt(a.AlturaMinima)) {
+                return -1;
+              }
+              return 0;
+            })
+          : state.filters.sort((a, b) => {
+              if (parseInt(a.AlturaMaxima) > parseInt(b.AlturaMaxima)) {
+                return -1;
+              }
+              if (parseInt(b.AlturaMaxima) > parseInt(a.AlturaMaxima)) {
+                return 1;
+              }
+              return 0;
+            });
+      return {
+        ...state,
+        filters: [...sortedByHeight],
+      };
     case "myDogs":
       return {
         ...state,

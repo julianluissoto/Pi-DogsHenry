@@ -11,6 +11,7 @@ const filterDogsByTemp = "filterDogsByTemp";
 const myDogs = "myDogs";
 const filterDogsByWeight = "filterDogsByWeight";
 const filterCreator = "filterCreator";
+const filterDogsByHeight = "filterDogsByHeight";
 
 export const getDogs = () => {
   return async (dispatch) => {
@@ -59,12 +60,6 @@ export const cleanDetail = () => {
     dispatch({ type: cleanDetails });
   };
 };
-/* export const filterByName = (name) => {
-  return async (dispatch) => {
-    let findedDog = await axios.get(`http://localhost:3001/dog?name=${name}`);
-    //  console.log(findedDog.data);
-  };
-}; */
 
 export const orderByNameDesc = () => {
   return (dispatch) => {
@@ -121,5 +116,11 @@ export const deleteDog = (dogToDeleteId) => {
 export const filterBycreator = (typeOfCreator) => {
   return function (dispatch) {
     dispatch({ type: filterCreator, payload: typeOfCreator });
+  };
+};
+export const filterByHeight = (sortedHeigthType) => {
+  console.log(sortedHeigthType);
+  return (dispatch) => {
+    dispatch({ type: filterDogsByHeight, payload: sortedHeigthType });
   };
 };

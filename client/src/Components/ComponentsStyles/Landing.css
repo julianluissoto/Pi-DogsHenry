@@ -13,15 +13,17 @@
    
     
 }
-.enterIcon{
- 
-    width: 100px;
-    height:100px;
+
+.enterIcon{ 
+  margin-top:500px;
+ border:2px solid red;
+    width: 80px;
+    height:80px;
     text-align: right;
     box-shadow: rgba(7, 216, 49, 0.4) 0px 30px 90px;
 }
 .icons-container{
-    width: 50%;
+    width: 20%;
     display:  flex;
     margin-left: 40%;
     margin-top: 20%;
@@ -40,52 +42,11 @@ text-align: left;
     }
 
 
-/* .container {
-    display: block;
-    max-width: 500px;
-    margin: auto;
-    padding: 10px;
-   
-  }
-  .welcome-greating{
-    color: white;
-    font-size: 100px ;
-  }
-    .greatings-container{
-        padding: 15px;
-       
-text-align: left;
-    }
-
-.maquina-escribir {
-    font-size: 30px;
-    margin-top: -30%;
-   
-    position: relative;
-    color: yellow;
-  }
-  
-  .maquina-escribir::after {
-    content: "";
-    border-left: 3px solid black;
-    background-color: #050507;
-    
-    
-    right: 0;
-    height: 100%;
-    position: absolute;
-    animation: maquinaescribir 3s infinite alternate steps(25);
-  }
-  
-  @keyframes maquinaescribir {
-    from {
-      width: 100%;
-    }
-    to {
-      width: 0;
-    }
-  } */
-    
+img{
+  width:200px;
+  height: 200px;
+  position: relative;
+}
    
    
    

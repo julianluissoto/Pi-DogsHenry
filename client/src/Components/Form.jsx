@@ -22,8 +22,8 @@ export default function Form() {
     minHeight: "",
     maxHeight: "",
 
-    maxLife: "",
-    minLife: "",
+    /* maxLife: "",
+    minLife: "", */
     temperament: [],
     image: "",
   });
@@ -41,7 +41,7 @@ export default function Form() {
   const [buttonState, setbuttonState] = useState(true);
 
   const handleChangeNumber = function (e) {
-    const numberInputFormated = e.target.value.replace(/\D/g, "");
+    const numberInputFormated = e.target.value;
 
     setNewDog({
       ...newDog,
@@ -88,7 +88,7 @@ export default function Form() {
       ? setbuttonState(false)
       : setbuttonState(true);
   }
-  console.log(newDog.temperament);
+
   const handleSubmit = function (e) {
     e.preventDefault();
     setError(validate(newDog));
@@ -176,7 +176,7 @@ export default function Form() {
               )}
             </div>
 
-            <div>
+            {/* <div>
               <label>Maxima Vida Estimada: </label>
               <input
                 type="number"
@@ -185,8 +185,8 @@ export default function Form() {
                 value={newDog.maxLife}
                 onChange={handleChangeNumber}
               />
-            </div>
-            <div>
+            </div> */}
+            {/* <div>
               <label>Minima Vida Estimada: </label>
               <input
                 type="number"
@@ -195,7 +195,7 @@ export default function Form() {
                 value={newDog.minLife}
                 onChange={handleChangeNumber}
               />
-            </div>
+            </div> */}
             <div>
               <label>Temperamento: </label>
               <select name="" id="" onChange={handleTemperaments}>
@@ -242,8 +242,7 @@ export default function Form() {
           temperament={newDog.temperament}
           maxWeight={newDog.maxWeight}
           minWeight={newDog.minWeight}
-          maxLife={newDog.maxLife}
-          minLife={newDog.minLife}
+          moreStyles={true}
           moreDetail={true}
         />
       </div>

@@ -8,18 +8,13 @@ import WriteMachine from "./TypeWriter";
 
 export default function Landing() {
   return (
-    <div className="landingBackground">
-      <div className="greatings-container">
-        {" "}
-        {/*  <h1 className="welcome-greating">I'm Julian Soto</h1>
-        <span className="maquina-escribir">Welcome to Henry Dogs</span> */}
+    <div className="landingBackground  ">
+      <div className="lets-Go-container">
+        <Link to={"/home"}>
+          <img className="lets-Go-" src={letsGo} alt="" />
+        </Link>
       </div>
 
-      <Link className="lets-Go-container" to={"/home"}>
-        {" "}
-        {/* <img className="enterIcon" src={img} alt="imagenEnter" /> */}
-        <img className="enterIcon" src={letsGo} alt="" />
-      </Link>
       <div>
         <WriteMachine text={["Welcome To Henry Dogs"]} />
       </div>

@@ -9,38 +9,27 @@ import "../Components/ComponentsStyles/Home.css";
 import FilterByWeigtht from "../Components/FilterByWeight";
 import Refresh from "../Components/Refresh";
 import FilterByCreator from "../Components/FilterByCreator";
+import "../Components/ComponentsStyles/Nav.css";
+
+import FIlterByheight from "../Components/FIlterByheight";
 
 export default function Home() {
   return (
     <div>
       <Nav />
-      <div>
-        {" "}
-        <h1 className="title">HENRY DOGS</h1>
-      </div>
 
-      <div className="createContainer">
-        <Link to={"/form"}>
-          <button className="button-72">Create your Dog</button>
-        </Link>
-        <div>
-          <Refresh />
-        </div>
-      </div>
+      <div className="createContainer"></div>
       <div className="homeContainer">
-        <div className="filterStyles">
-          <div>
-            <FilterByName />
-          </div>
-          <div>
-            <FilterByTemperament />
-          </div>
-          <div>
-            <FilterByCreator />
-          </div>
+        <div>
+          <div className="filterStyles">
+            <FIlterByheight />
 
-          <div>
             <FilterByWeigtht />
+
+            <FilterByCreator />
+            <FilterByTemperament />
+            <FilterByName />
+            <Refresh />
           </div>
         </div>
       </div>

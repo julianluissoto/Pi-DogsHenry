@@ -6,3 +6,7 @@
     text-align: center;
     margin: auto;
 }
+.loading{
+    background-color: aqua;
+   opacity:0.5;
+}

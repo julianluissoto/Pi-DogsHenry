@@ -1,20 +1,18 @@
 
-body{
+.App{
   background-image: url("../../images/landing.jpg");
-  background-repeat: no-repeat;
+  
   background-size: cover;
-  height: 100vh
+  
+  
 }
 
 .allDogsContainer{
     display: flex;
    flex-wrap: wrap;
    justify-content: space-around;
-  /*  background-image: url("../../images/landing.jpg"); */
-  /*  background-repeat: no-repeat;
-   background-size: cover;
-   height: 100vh;
-    */
+  margin: auto;
+  
    
 }
 
@@ -32,10 +30,12 @@ opacity: 0.9
 .filterStyles{
 
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
-  align-items: center;
-margin: auto;
-padding:5px;
+ margin: auto;
+ padding: 0;
+
+
 background: rgb(34,193,195);
 background: radial-gradient(circle, rgba(34,193,195,1) 8%, rgba(103,127,185,1) 51%, rgba(182,52,174,0.7847514005602241) 100%);
   font-family: 'Josefin Sans', sans-serif;
@@ -43,9 +43,19 @@ background: radial-gradient(circle, rgba(34,193,195,1) 8%, rgba(103,127,185,1) 5
   opacity: 0.9
    
 }
+.filter{
+
+  margin: 0;
+  padding: 0;
+}
+.filter-1{
+
+ 
+ margin: auto;
+}
 .createContainer{
-  margin-top: 10px;
-  padding: 20px;
+  margin-top: 40px;
+ 
    
     display: flex;
     justify-content: space-around;
@@ -66,41 +76,29 @@ option{
   color: black;
    font-family: 'Josefin Sans', sans-serif;
 }
+p{
+  font-size: 15px;
+  color: yellow;
+  font-weight: 400;
+  font-family: sans-serif;
+}
 
+.A-Z-Button{
+  background-image: linear-gradient(#22062f, #c7b7db 50%)
+}
+.A-Z-Button:hover {
+ background-image: linear-gradient(#B384C9, #391F5B 50%);
 
+}
 
-
-
-.button-72 {
-  align-items: center;
-  background-color: initial;
-  background-image: linear-gradient(rgba(179, 132, 201, .84), rgba(57, 31, 91, .84) 50%);
-  border-radius: 42px;
-  border-width: 0;
-  box-shadow: rgba(143, 100, 7, 0.24) 0 2px 2px,rgba(179, 132, 201, 0.4) 0 8px 12px;
-  color: #FFFFFF;
-  cursor: pointer;
- 
-  font-family: Quicksand,sans-serif;
-  font-size: 18px;
-  font-weight: 500;
+.button-Container{
+  display: flex;
+  margin: auto;
   
-  letter-spacing: .04em;
-  line-height: 16px;
-  margin: 0;
-  padding: 10px 10px;
-  text-align: center;
-  text-decoration: none;
-  text-shadow: rgba(255, 255, 255, 0.4) 0 0 4px,rgba(255, 255, 255, 0.2) 0 0 12px,rgba(57, 31, 91, 0.6) 1px 1px 4px,rgba(57, 31, 91, 0.32) 4px 4px 16px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: baseline;
 }
 
- .button-72:hover {
-  background-image: linear-gradient(#B384C9, #391F5B 50%);
-}
+
+
 
 @media (min-width: 768px) {
   .button-72 {
@@ -109,28 +107,34 @@ option{
   }
 } 
 
+.dogCreatorIcon{
+  padding: 5px;
+height:100px;
+width: 80px;
+  cursor: pointer;
+  border: 1px solid greenyellow;
+}
 
 
-.button-33 {
+.refresh-Button {
+  width: 150px;
   background-color: #c2fbd7;
-  border-radius: 100px;
+  border-radius: 80px;
   box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
   color: green;
   cursor: pointer;
   display: inline-block;
   font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
-  padding: 7px 20px;
+  padding: 7px 10x;
   text-align: center;
   text-decoration: none;
   transition: all 250ms;
   border: 0;
   font-size: 16px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+ 
 }
 
-.button-33:hover {
+.refresh-Button:hover {
   box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
-  transform: scale(1.05) rotate(-1deg);
+  transform: scale(1.05) rotate(-2deg);
 }

@@ -6,6 +6,8 @@ import {
   getTemperaments,
   filterByTemperament,
 } from "../Redux/Actions";
+import Paginate from "./Pagination";
+import AllDogs from "./AllDogs";
 
 export default function FilterByTemperament() {
   let dispatch = useDispatch();
@@ -19,9 +21,10 @@ export default function FilterByTemperament() {
   function handleTemperaments(e) {
     if (e.target.value === "All") return dispatch(getDogs());
     dispatch(filterByTemperament(e.target.value));
+    return <AllDogs Page={1} />;
   }
   return (
-    <div>
+    <div className="filter">
       <label>Filter By Temperament: </label>
       <select name="" id="" onChange={handleTemperaments}>
         <option value={"All"}>All</option>

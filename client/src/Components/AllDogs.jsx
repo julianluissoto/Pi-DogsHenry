@@ -6,8 +6,15 @@ import loading from "../images/giphy.gif";
 
 import "./ComponentsStyles/AllDogs.css";
 import Paginate from "./Pagination";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { getDogs } from "../Redux/Actions";
 
 export default function AllDogs() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getDogs());
+  }, [dispatch]);
   let dogsState = useSelector((state) => state.filters);
   // console.log(dogsState);
 
@@ -18,8 +25,10 @@ export default function AllDogs() {
   const currentDogs = dogsState.slice(indexOfFirstDog, indexOfLastDog); //elementos a renderizar en la pagina, segun el valor de paginado
 
   const paginado = (Number) => {
-    setCurrentPage(Number); // setea el estado con el number recibido del componete Pagination
+    setCurrentPage(Number);
+    // setea el estado con el number recibido del componete Pagination
   };
+
   return (
     <>
       <div>
@@ -34,8 +43,9 @@ export default function AllDogs() {
           allDogs={dogsState.length}
           paginado={paginado}
         />
+
         <div className="allDogsContainer">
-          {dogsState.length > 0 ? (
+          {currentDogs.length ? (
             currentDogs.map((el) => {
               return (
                 <DogCard
@@ -57,7 +67,9 @@ export default function AllDogs() {
               );
             })
           ) : (
-            <img src={loading} alt="" />
+            <div className="loading">
+              <img src={loading} alt="" />
+            </div>
           )}
         </div>
       </div>

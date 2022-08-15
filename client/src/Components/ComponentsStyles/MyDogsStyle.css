@@ -20,7 +20,7 @@ transition-duration: 0.3s;
 .my-dogs-full-container{
     
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
   
 

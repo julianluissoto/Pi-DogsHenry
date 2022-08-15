@@ -11,7 +11,7 @@ export default function FilterByWeigtht() {
   }
 
   return (
-    <div>
+    <div className="filter">
       <label>Filter By Weight: </label>
       <select name="" id="" onChange={handleWeight}>
         <option value={"max_weight"}>Max-Weight</option>

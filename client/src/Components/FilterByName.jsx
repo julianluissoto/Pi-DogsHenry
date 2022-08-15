@@ -25,14 +25,11 @@ export default function FilterByName() {
   };
 
   return (
-    <div>
-      <div>
+    <div className="filter-1">
+      <div className="button-Container">
         <button className="A-Z-Button" onClick={handleClick}>
           Order Z-A
-        </button>
-      </div>
-      <div>
-        {" "}
+        </button>{" "}
         <button className="A-Z-Button" onClick={handleClick2}>
           Order A-Z
         </button>

@@ -4,6 +4,7 @@ import SearchBar from "./SearchBar";
 import "./ComponentsStyles/Nav.css";
 import home from "../images/home.png";
 
+import "../Components/ComponentsStyles/Home.css";
 export default function Nav() {
   return (
     <div className="navContainer">
@@ -14,6 +15,9 @@ export default function Nav() {
         <img className="home-Logo" src={home} alt="" />
       </Link>
       <SearchBar />
+      <Link to={"/form"}>
+        <h2>CREATE YOUR DOG </h2>
+      </Link>
     </div>
   );
 }

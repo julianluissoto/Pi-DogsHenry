@@ -1,15 +1,15 @@
 const { Router } = require("express");
 const axios = require("axios");
 const { Dog, Temperament } = require("../db.js");
-//const temperament = require("../models/temperament.js");
 
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
 //mis base de datos desde la Api
 
 const router = Router();
-// en esta ruta obtengo todos los perros
+
 router.get("/dogs", async (req, res) => {
+  // en esta ruta obtengo todos los perros
   //llamo la api y me traigo todo lo que tiene
 
   try {

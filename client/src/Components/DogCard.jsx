@@ -17,34 +17,37 @@ export default function DogCard({
   buttonDetail,
 }) {
   return (
-    <div className={moreStyles ? "dogCardContainer" : "myOwnDog"}>
-      {moreDetail && (
-        <div>
-          {" "}
-          <p>Temperamentos: {temperament + " "} </p>{" "}
-          <p>Peso Maximo: {maxWeight} Kg</p>
-          <p>Peso Minimo: {minWeight} Kg</p>
-          <p>Altura Maxima: {maxHeight} cm </p>
-          <p>Altura Minima: {minHeight} cm </p>
-          <p>
+    <Link className="dogCardContainer" to={`details/${id}`}>
+      <div /* className={moreStyles ? "dogCardContainer" : "myOwnDog"} */>
+        {moreDetail && (
+          <div className="allDogsContainer">
             {" "}
-            Esperanza de vida: entre {minLife} y {maxLife} Años
-          </p>
+            <p>Temperamentos: {temperament + " "} </p>{" "}
+            <p>Peso Maximo: {maxWeight} Kg</p>
+            <p>Peso Minimo: {minWeight} Kg</p>
+            <p>Altura Maxima: {maxHeight} cm </p>
+            <p>Altura Minima: {minHeight} cm </p>
+            <p>
+              {" "}
+              Esperanza de vida: entre {minLife} y {maxLife} Años
+            </p>
+          </div>
+        )}
+
+        <div className="dog-Image-container">
+          {" "}
+          <img className="dogImage" src={image} alt="dogImagen" />
         </div>
-      )}
+        <div>
+          <h2 className={moreStyles ? "dogRace " : "dogRace1"}>Breed</h2>
+          <h2> {name}</h2>
+          <h2 className={moreStyles ? "dogRace " : "dogRace1"}>Temperament</h2>
+          <h3>{temperament}</h3>
 
-      <div className="dog-Image-container">
-        {" "}
-        <img className="dogImage" src={image} alt="dogImagen" />
+          <h2 className={moreStyles ? "dogRace " : "dogRace1"}>Max-Weight</h2>
+          <h3 className="dogWeight">{maxWeight} kg</h3>
+        </div>
       </div>
-
-      <div className={moreStyles ? "" : "container-card"}>
-        <h2 className={moreStyles ? "dogRace " : "dogRace1"}>Raza: {name}</h2>
-        <Link to={`details/${id}`}>
-          {buttonDetail && <button className="toDetail"> to Dog Detail</button>}
-          {/*   <button className="toDetail"> to Dog Detail</button> */}
-        </Link>
-      </div>
-    </div>
+    </Link>
   );
 }
