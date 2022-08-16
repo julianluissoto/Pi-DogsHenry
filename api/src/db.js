@@ -6,7 +6,7 @@ const path = require("path");
 const temperament = require("./models/temperament");
 const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
 
-const sequelize = new Sequelize(
+/* const sequelize = new Sequelize(
   process.env.DATABASE_URL ,
   {
     logging: false,
@@ -18,10 +18,10 @@ const sequelize = new Sequelize(
       }
     }
   }
-)
+) */
 
 
-/* let sequelize =
+ let sequelize =
     process.env.NODE_ENV === "production"
     ? new Sequelize({
         database: DB_NAME,
@@ -46,12 +46,12 @@ const sequelize = new Sequelize(
         ssl: true,
       })
     : new Sequelize(
-        `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/dogs`,
+        `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}${DB_NAME}`,
         {
           logging: false,
           native: false,
         }
-      ); */
+      ); 
  
   /* new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/dogs`, {
     logging: false, // set to console.log to see the raw SQL queries
