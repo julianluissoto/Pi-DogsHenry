@@ -16,7 +16,7 @@ const filterDogsByHeight = "filterDogsByHeight";
 export const getDogs = () => {
   return async (dispatch) => {
     try {
-      let allDogs = await axios.get("http://localhost:3001/dogs");
+      let allDogs = await axios.get("https://dogs-pi-julian.herokuapp.com/dogs");
 
       dispatch({ type: getAllDogs, payload: allDogs.data.allDogsRaces });
     } catch {
