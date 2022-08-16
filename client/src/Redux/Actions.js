@@ -27,7 +27,7 @@ export const getDogs = () => {
 
 export const getTemperaments = () => {
   return async (dispatch) => {
-    let allTemperaments = await axios.get("http://localHost:3001/temperaments");
+    let allTemperaments = await axios.get("https://dogs-pi-julian.herokuapp.com/temperaments");
     dispatch({
       type: getAllTemperaments,
       payload: allTemperaments.data.temperamentList,
@@ -37,7 +37,7 @@ export const getTemperaments = () => {
 
 export const getdogDetails = (id) => {
   return async (dispatch) => {
-    let dogDetails = await axios.get(`http://localHost:3001/dog/${id}`);
+    let dogDetails = await axios.get(`https://dogs-pi-julian.herokuapp.com/dog/${id}`);
 
     dispatch({ type: getDogDetails, payload: dogDetails.data });
   };
@@ -46,7 +46,7 @@ export const getdogDetails = (id) => {
 export const createDog = (el) => {
   return async () => {
     try {
-      let createDog = await axios.post("http://localHost:3001/dogs", el);
+      let createDog = await axios.post("https://dogs-pi-julian.herokuapp.com/dogs", el);
       let createdMessage = await createDog;
       alert(createdMessage.data);
     } catch (error) {
@@ -79,7 +79,7 @@ export const searchByName = (name) => {
 
 export const filterByTemperament = (temp) => {
   return function (dispatch) {
-    return axios.get("http://localHost:3001/dogs").then((resp) => {
+    return axios.get("https://dogs-pi-julian.herokuapp.com/dogs").then((resp) => {
       let dogFound = resp.data.allDogsRaces.filter((el) => {
         return el.Temperamento && el.Temperamento.split(", ").includes(temp);
       });
@@ -89,7 +89,7 @@ export const filterByTemperament = (temp) => {
 };
 export const showMyDogs = () => {
   return function (dispatch) {
-    return axios.get("http://localHost:3001/dogs").then((resp) => {
+    return axios.get("https://dogs-pi-julian.herokuapp.com/dogs").then((resp) => {
       let MydogsFound = resp.data.allDogsRaces.filter((el) => {
         return el.id.length > 5;
       });
@@ -106,7 +106,7 @@ export const filterByMaxWeigth = (sortedWeigthType) => {
 export const deleteDog = (dogToDeleteId) => {
   return function () {
     axios
-      .delete(`http://localHost:3001/dog/${dogToDeleteId}`)
+      .delete(`https://dogs-pi-julian.herokuapp.com/${dogToDeleteId}`)
       .then((resp) => {
         alert(resp.data);
       })
