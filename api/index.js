@@ -54,8 +54,8 @@ async function precharge() {
 }
 
 // Syncing all the models at once.
-conn.sync({ force: true }).then(async () => {
-  await precharge();
+conn.sync({ force: true }).then( () => {
+  
   server.listen(process.env.PORT, () => {
     console.log("server listening at 3001"); // eslint-disable-line no-console
   });
