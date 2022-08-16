@@ -10,7 +10,7 @@ const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
   process.env.DATABASE_URL ,
   {
     logging: false,
-    // native: false
+    // native: falses
     dialectOptions: {
       ssl: {
         require: true,
@@ -46,7 +46,7 @@ const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
         ssl: true,
       })
     : new Sequelize(
-        `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}${DB_NAME}`,
+        `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/dogs`,
         {
           logging: false,
           native: false,
