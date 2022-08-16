@@ -52,7 +52,7 @@ async function precharge() {
     console.log(error);
   }
 }
-git
+
 // Syncing all the models at once.
 conn.sync({ force: true }).then( () => {
   
