@@ -9,7 +9,8 @@ import { BrowserRouter } from "react-router-dom";
 import axios from "axios";
 import dotenv from "dotenv";
 dotenv.config();
-axios.defaults.baseURL = process.env.REACT_APP_API || "http://localhost:5432";
+axios.defaults.baseURL =
+  "https://pi-dogshenry-production.up.railway.app/" || "http://localhost:5432";
 
 ReactDOM.render(
   <React.StrictMode>
