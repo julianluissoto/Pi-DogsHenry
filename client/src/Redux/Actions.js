@@ -27,7 +27,7 @@ export const getDogs = () => {
 
 export const getTemperaments = () => {
   return async (dispatch) => {
-    let allTemperaments = await axios.get("temperaments");
+    let allTemperaments = await axios.get("/temperaments");
     dispatch({
       type: getAllTemperaments,
       payload: allTemperaments.data.temperamentList,

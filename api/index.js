@@ -4,7 +4,7 @@ require("dotenv").config();
 const axios = require("axios");
 const { Dog, Temperament } = require("./src/db");
 const { PORT } = process.env;
-async function precharge() {
+/* async function precharge() {
   try {
     const resDogs = await axios.get("https://api.thedogapi.com/v1/breeds");
     const datosApi = resDogs.data;
@@ -32,7 +32,7 @@ async function precharge() {
   } catch (error) {
     console.log(error);
   }
-}
+} */
 
 // Syncing all the models at once.
 conn.sync({ force: false }).then(() => {
