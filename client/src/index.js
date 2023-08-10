@@ -10,7 +10,7 @@ import axios from "axios";
 import dotenv from "dotenv";
 dotenv.config();
 axios.defaults.baseURL =
-  "https://pi-dogshenry-production.up.railway.app/" || "http://localhost:5432";
+  "https://henry-dog-api.onrender.com" || "http://localhost:5432";
 
 ReactDOM.render(
   <React.StrictMode>
