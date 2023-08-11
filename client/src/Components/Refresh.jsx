@@ -8,7 +8,7 @@ const Refresh = () => {
     dispatch(getDogs());
   };
   return (
-    <div>
+    <div className="refresh__button--container">
       <button className="refresh-Button" onClick={handleRefresh}>
         REFRESH
       </button>

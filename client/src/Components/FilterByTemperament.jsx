@@ -6,7 +6,7 @@ import {
   getTemperaments,
   filterByTemperament,
 } from "../Redux/Actions";
-import Paginate from "./Pagination";
+
 import AllDogs from "./AllDogs";
 
 export default function FilterByTemperament() {

@@ -16,7 +16,7 @@ export default function Nav() {
       </Link>
       <SearchBar />
       <Link to={"/form"}>
-        <h2>CREATE YOUR DOG </h2>
+        <h2 className="createDog">CREATE YOUR DOG </h2>
       </Link>
     </div>
   );

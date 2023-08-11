@@ -7,7 +7,6 @@ const FIlterByheight = () => {
   function handleHeight(e) {
     console.log(e.target.value);
     dispatch(filterByHeight(e.target.value));
-    // console.log(e.target.value);
   }
 
   return (

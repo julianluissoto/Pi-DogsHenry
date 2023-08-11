@@ -1,140 +1,149 @@
-
-.App{
+.App {
   background-image: url("../../images/landing.jpg");
-  
+
   background-size: cover;
-  
-  
 }
 
-.allDogsContainer{
-    display: flex;
-   flex-wrap: wrap;
-   justify-content: space-around;
-  margin: auto;
-  
-   
+.homeContainer {
+  margin-top: 1rem;
 }
 
-
-
-.title{
- margin-top: 50px   ;
-    background: rgb(34,193,195);
-background: radial-gradient(circle, rgba(34,193,195,1) 8%, rgba(103,127,185,1) 51%, rgba(182,52,174,0.7847514005602241) 100%);
-opacity: 0.9
-}
-
-
-
-.filterStyles{
-
+.allDogsContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
- margin: auto;
- padding: 0;
-
-
-background: rgb(34,193,195);
-background: radial-gradient(circle, rgba(34,193,195,1) 8%, rgba(103,127,185,1) 51%, rgba(182,52,174,0.7847514005602241) 100%);
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: larger;
-  opacity: 0.9
-   
+  margin: auto;
 }
-.filter{
 
-  margin: 0;
+.title {
+  margin-top: 50px;
+  background: rgb(34, 193, 195);
+  background: radial-gradient(circle,
+      rgba(34, 193, 195, 1) 8%,
+      rgba(103, 127, 185, 1) 51%,
+      rgba(182, 52, 174, 0.7847514005602241) 100%);
+  opacity: 0.9;
+}
+
+.refresh__button--container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filterStyles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: auto;
   padding: 0;
-}
-.filter-1{
 
- 
- margin: auto;
+  background: rgb(34, 193, 195);
+  background: radial-gradient(circle,
+      rgba(34, 193, 195, 1) 8%,
+      rgba(103, 127, 185, 1) 51%,
+      rgba(182, 52, 174, 0.7847514005602241) 100%);
+  font-family: "Josefin Sans", sans-serif;
+  font-size: larger;
+  opacity: 0.9;
 }
-.createContainer{
+
+.filter-container {
+  max-width: 75%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: cyan;
+}
+
+.createContainer {
   margin-top: 40px;
- 
-   
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background: rgb(34,193,195);
-background: radial-gradient(circle, rgba(34,193,195,1) 8%, rgba(103,127,185,1) 51%, rgba(182,52,174,0.7847514005602241) 100%);
-opacity: 0.9
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: rgb(34, 193, 195);
+  background: radial-gradient(circle,
+      rgba(34, 193, 195, 1) 8%,
+      rgba(103, 127, 185, 1) 51%,
+      rgba(182, 52, 174, 0.7847514005602241) 100%);
+  opacity: 0.9;
 }
+
 select {
   font-size: medium;
-  margin: 40px;
+
   background: rgba(0, 0, 0, 0.3);
   color: #fff;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
   color: yellow;
 }
-option{
+
+option {
   color: black;
-   font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
 }
-p{
+
+p {
   font-size: 15px;
   color: yellow;
   font-weight: 400;
   font-family: sans-serif;
 }
 
-.A-Z-Button{
-  background-image: linear-gradient(#22062f, #c7b7db 50%)
+.A-Z-Button {
+  background-image: linear-gradient(#22062f, #c7b7db 50%);
 }
+
 .A-Z-Button:hover {
- background-image: linear-gradient(#B384C9, #391F5B 50%);
-
+  background-image: linear-gradient(#b384c9, #391f5b 50%);
 }
 
-.button-Container{
+.button-Container {
   display: flex;
   margin: auto;
-  
 }
-
-
-
 
 @media (min-width: 768px) {
   .button-72 {
     font-size: 21px;
     padding: 18px 34px;
   }
-} 
+}
 
-.dogCreatorIcon{
+.dogCreatorIcon {
   padding: 5px;
-height:100px;
-width: 80px;
+  height: 100px;
+  width: 80px;
   cursor: pointer;
   border: 1px solid greenyellow;
 }
-
 
 .refresh-Button {
   width: 150px;
   background-color: #c2fbd7;
   border-radius: 80px;
-  box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+  box-shadow: rgba(44, 187, 99, 0.2) 0 -25px 18px -14px inset,
+    rgba(44, 187, 99, 0.15) 0 1px 2px, rgba(44, 187, 99, 0.15) 0 2px 4px,
+    rgba(44, 187, 99, 0.15) 0 4px 8px, rgba(44, 187, 99, 0.15) 0 8px 16px,
+    rgba(44, 187, 99, 0.15) 0 16px 32px;
   color: green;
   cursor: pointer;
   display: inline-block;
-  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
   padding: 7px 10x;
   text-align: center;
   text-decoration: none;
   transition: all 250ms;
   border: 0;
   font-size: 16px;
- 
 }
 
 .refresh-Button:hover {
-  box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+  box-shadow: rgba(44, 187, 99, 0.35) 0 -25px 18px -14px inset,
+    rgba(44, 187, 99, 0.25) 0 1px 2px, rgba(44, 187, 99, 0.25) 0 2px 4px,
+    rgba(44, 187, 99, 0.25) 0 4px 8px, rgba(44, 187, 99, 0.25) 0 8px 16px,
+    rgba(44, 187, 99, 0.25) 0 16px 32px;
   transform: scale(1.05) rotate(-2deg);
 }

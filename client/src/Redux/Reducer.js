@@ -140,7 +140,6 @@ export default function appReducer(state = inititalState, action) {
         filters: state.myDogs,
       };
 
-      break;
     default:
       return state;
   }

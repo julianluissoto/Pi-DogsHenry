@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
 import AllDogs from "../Components/AllDogs";
 
 import FilterByName from "../Components/FilterByName";
@@ -20,17 +20,15 @@ export default function Home() {
 
       <div className="createContainer"></div>
       <div className="homeContainer">
-        <div>
-          <div className="filterStyles">
-            <FIlterByheight />
+        <div className="filter-container">
+          <FIlterByheight />
 
-            <FilterByWeigtht />
+          <FilterByWeigtht />
 
-            <FilterByCreator />
-            <FilterByTemperament />
-            <FilterByName />
-            <Refresh />
-          </div>
+          <FilterByCreator />
+          <FilterByTemperament />
+          <FilterByName />
+          <Refresh />
         </div>
       </div>
       <div className="allDogsContainer">
