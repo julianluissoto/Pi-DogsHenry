@@ -24,20 +24,6 @@ const sequelize = new Sequelize(
   }
 );
 
-/* const { Pool } = pg;
-
-const pool = new Pool({
-  connectionString: process.env.POSTGRES_URL + "?sslmode=require",
-});
-
- const sequelize = new Sequelize(
-  "postgres://default:RVr85UXNzCHg@ep-quiet-truth-48349830.us-east-1.postgres.vercel-storage.com:5432/verceldb?sslmode=require",
-
-  {
-    logging: false, // set to console.log to see the raw SQL queries
-    native: false, // lets Sequelize know we can use pg-native for ~30% more speed
-  }
-);  */
 const basename = path.basename(__filename);
 
 const modelDefiners = [];
