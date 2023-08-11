@@ -8,9 +8,8 @@ import pg from "pg";
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_PORT } = process.env;
 
 const sequelize = new Sequelize(
-  process.env.DB_NAME,
-  process.env.DB_USERNAME, // You can remove this line if you're not using it
-  process.env.DB_PASSWORD, // You can remove this line if you're not using it
+  process.env.DB_USER,
+
   {
     host: process.env.DB_HOST,
     port: process.env.DB_PORT || 5432, // Default to PostgreSQL port if not provided
