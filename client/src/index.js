@@ -10,7 +10,7 @@ import axios from "axios";
 import dotenv from "dotenv";
 dotenv.config();
 axios.defaults.baseURL =
-  "pi-dogs-henry-api.vercel.app" || "http://localhost:5432";
+  "https://pi-dogs-henry-api.vercel.app/" || "http://localhost:5432";
 
 ReactDOM.render(
   <React.StrictMode>
