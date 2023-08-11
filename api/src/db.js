@@ -7,7 +7,7 @@ const temperament = require("./models/temperament");
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_PORT } = process.env;
 
 const sequelize = new Sequelize(
-  "postgres://julian:87DwHQ0ycgMrjP6iFkEjVDQLLnVuGavA@dpg-cjajbgtm2m9c73e65br0-a/henrydogs_qaba",
+  "postgres://default:RVr85UXNzCHg@ep-quiet-truth-48349830.us-east-1.postgres.vercel-storage.com:5432/verceldb?sslmode=require",
 
   {
     logging: false, // set to console.log to see the raw SQL queries
