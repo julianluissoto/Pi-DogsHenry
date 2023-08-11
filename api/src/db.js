@@ -4,23 +4,41 @@ require("dotenv").config();
 const fs = require("fs");
 const path = require("path");
 const temperament = require("./models/temperament");
-
+import pg from "pg";
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_PORT } = process.env;
 
-const { Pool } = pg;
+const sequelize = new Sequelize(
+  process.env.DB_NAME,
+  process.env.DB_USERNAME, // You can remove this line if you're not using it
+  process.env.DB_PASSWORD, // You can remove this line if you're not using it
+  {
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT || 5432, // Default to PostgreSQL port if not provided
+    dialect: "postgres",
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false,
+      },
+    },
+    logging: false,
+  }
+);
+
+/* const { Pool } = pg;
 
 const pool = new Pool({
-  connectionString: process.env.DB_USER + "?sslmode=require",
+  connectionString: process.env.POSTGRES_URL + "?sslmode=require",
 });
 
-/* const sequelize = new Sequelize(
+ const sequelize = new Sequelize(
   "postgres://default:RVr85UXNzCHg@ep-quiet-truth-48349830.us-east-1.postgres.vercel-storage.com:5432/verceldb?sslmode=require",
 
   {
     logging: false, // set to console.log to see the raw SQL queries
     native: false, // lets Sequelize know we can use pg-native for ~30% more speed
   }
-); */
+);  */
 const basename = path.basename(__filename);
 
 const modelDefiners = [];
