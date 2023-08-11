@@ -7,6 +7,6 @@ const { PORT } = process.env;
 
 conn.sync({ force: false }).then(() => {
   server.listen(PORT, () => {
-    console.log("listening on port ", PORT);
+    console.log("listening on port", PORT);
   });
 });
