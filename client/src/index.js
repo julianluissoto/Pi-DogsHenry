@@ -7,8 +7,7 @@ import { Provider } from "react-redux";
 import store from "./Redux/Store";
 import { BrowserRouter } from "react-router-dom";
 import axios from "axios";
-import dotenv from "dotenv";
-dotenv.config();
+
 axios.defaults.baseURL =
   "https://pi-dogs-henry-api.vercel.app/" || "http://localhost:5432";
 

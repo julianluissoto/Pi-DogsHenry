@@ -1,35 +1,52 @@
+.detailContainer {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 
-.detailContainer{
-    margin-top: 50px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-   
-    background-image: url("../../images/landing.jpg");
-    background-repeat: no-repeat;
+  background-image: url("../../images/landing.jpg");
+
   background-size: cover;
   height: 100vh
-    
 }
 
-.imgDetail{
-border: 2px solid blue;
-width: 300px;
-height: 280px;
-border-radius: 5px;
-}
-.dogDetailsContainer{
-   
-    border-radius: 10px;
-    background: rgb(15,15,64);
-      background: linear-gradient(0deg, rgba(15,15,64,1) 16%, rgba(89,49,16,0.9051995798319328) 51%, rgba(182,52,174,0.7847514005602241) 100%);
+.dog__name {
+  color: coral;
+  font-size: 2rem;
 }
 
-.dogRace{
-    max-width: 200px;
-    font-family: 'Roboto', sans-serif;
-    margin: 5%;
-    border: 1px solid black;
-    border-radius: 5px;
+.detailInfo {
+  color: white;
+  font-size: medium;
+}
+
+@media only screen and (max-width: 600px) {
+  .detailContainer {
+
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.imgDetail {
+  border: 2px solid blue;
+  width: 300px;
+  height: 280px;
+  border-radius: 5px;
+}
+
+.dogDetailsContainer {
+  padding: 20px;
+  border-radius: 10px;
+  background: rgb(15, 15, 64);
+  background: linear-gradient(0deg, rgba(15, 15, 64, 1) 16%, rgba(89, 49, 16, 0.9051995798319328) 51%, rgba(182, 52, 174, 0.7847514005602241) 100%);
+}
+
+.dogRace {
+  max-width: 200px;
+  font-family: 'Roboto', sans-serif;
+  margin: 5%;
+  border: 1px solid black;
+  border-radius: 5px;
 }

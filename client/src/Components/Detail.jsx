@@ -36,12 +36,14 @@ export default function DogDetail() {
           <img
             className="imgDetail"
             src={dogDetails ? dogDetails.image : dogDetails2?.image}
-            alt="aqui va la imagen"
+            alt="dog image"
           />
         </div>
 
         <div className="dogDetailsContainer">
-          <h1>{dogDetails ? dogDetails.Nombre : dogDetails2?.Nombre}</h1>
+          <h1 className="dog__name">
+            {dogDetails ? dogDetails.Nombre : dogDetails2?.Nombre}
+          </h1>
           <h2 className="detailInfo">
             Peso Maximo:{" "}
             {dogDetails ? dogDetails.PesoMaximo : dogDetails2?.PesoMaximo} Kg
