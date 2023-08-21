@@ -42,7 +42,7 @@ router.get("/dogs", async (req, res) => {
         VidaMinima: el.minLife,
         Temperamento: tempListDog.join(", "),
         id: el.id,
-        image: image,
+        image: el.image,
       };
     });
     const apiFormateada = datosApi.map((el) => {
@@ -58,7 +58,7 @@ router.get("/dogs", async (req, res) => {
         VidaMinima: el.life_span.split(" ")[0],
         VidaMaxima: el.life_span.split(" ")[2],
         Temperamento: el.temperament,
-        image: el.image.url,
+        image: image,
 
         id: el.id,
       };
