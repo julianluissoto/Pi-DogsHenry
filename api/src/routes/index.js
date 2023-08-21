@@ -11,13 +11,18 @@ const router = Router();
 router.get("/dogs", async (req, res) => {
   // en esta ruta obtengo todos los perros
   //llamo la api y me traigo todo lo que tiene
-
+  const referenceImageId = el.reference_image_id;
   try {
     const resDogs = await axios.get("https://api.thedogapi.com/v1/breeds");
     const datosApi = resDogs.data; //gurdo los datos de la api
     const dataBaseDogs = await Dog.findAll({
       include: Temperament,
     });
+    const imageResponse = await axios.get(
+      `https://api.thedogapi.com/v1/images/${referenceImageId}`
+    );
+
+    const image = imageResponse.data.url || "";
 
     const dBFormateada = dataBaseDogs.map((el) => {
       //console.log(el.temperaments[0].dataValues.temperament);
@@ -37,7 +42,7 @@ router.get("/dogs", async (req, res) => {
         VidaMinima: el.minLife,
         Temperamento: tempListDog.join(", "),
         id: el.id,
-        image: el.image,
+        image: image,
       };
     });
     const apiFormateada = datosApi.map((el) => {
