@@ -16,28 +16,20 @@ export default function AllDogs() {
     dispatch(getDogs());
   }, [dispatch]);
   let dogsState = useSelector((state) => state.filters);
-  // console.log(dogsState);
 
   const [currentPage, setCurrentPage] = useState(1);
 
   const indexOfLastDog = currentPage * 8;
   const indexOfFirstDog = indexOfLastDog - 8;
-  const currentDogs = dogsState.slice(indexOfFirstDog, indexOfLastDog); //elementos a renderizar en la pagina, segun el valor de paginado
+  const currentDogs = dogsState.slice(indexOfFirstDog, indexOfLastDog);
 
   const paginado = (Number) => {
     setCurrentPage(Number);
-    // setea el estado con el number recibido del componete Pagination
   };
 
   return (
     <>
       <div>
-        {/* <div>
-          {" "}
-          <button onClick={prevpage}>anterior</button>
-          <button onClick={nextpage}>siguiente</button>
-        </div> */}
-
         <Paginate
           dogsPerPage={8}
           allDogs={dogsState.length}
