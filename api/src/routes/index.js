@@ -9,23 +9,18 @@ const { Dog, Temperament } = require("../db.js");
 const router = Router();
 
 router.get("/dogs", async (req, res) => {
-  // en esta ruta obtengo todos los perros
-  //llamo la api y me traigo todo lo que tiene
-
   try {
     const resDogs = await axios.get("https://api.thedogapi.com/v1/breeds");
-    const datosApi = resDogs.data; //gurdo los datos de la api
+    const datosApi = resDogs.data;
+
     const dataBaseDogs = await Dog.findAll({
       include: Temperament,
     });
 
     const dBFormateada = dataBaseDogs.map((el) => {
-      //console.log(el.temperaments[0].dataValues.temperament);
-
       const tempListDog = el.temperaments.map(
         (el) => el.dataValues.temperament
       );
-      //console.log(tempListDog);
 
       return {
         Nombre: el.name,
@@ -37,38 +32,55 @@ router.get("/dogs", async (req, res) => {
         VidaMinima: el.minLife,
         Temperamento: tempListDog.join(", "),
         id: el.id,
-        /*  image: el.image, */
       };
     });
-    const apiFormateada = datosApi.map((el) => {
-      // mapeo y guardo en dogRaceFromApi un array de objetos
-      //con cada uno de los dog y la info que necesito
-      return {
-        Nombre: el.name,
-        PesoMaximo: el.weight.metric.split(" ")[2],
-        PesoMinimo: el.weight.metric.split(" ")[0],
 
-        AlturaMaxima: el.height.metric.split(" ")[2],
-        AlturaMinima: el.height.metric.split(" ")[0],
-        VidaMinima: el.life_span.split(" ")[0],
-        VidaMaxima: el.life_span.split(" ")[2],
-        Temperamento: el.temperament,
-        /* image: el.image.url, */
+    const apiFormateada = await Promise.all(
+      datosApi.map(async (el) => {
+        try {
+          const imageResponse = await axios.get(
+            `https://api.thedogapi.com/v1/images/${el.reference_image_id}`
+          );
 
-        id: el.id,
-      };
-    });
-    //await resDogs.findOrCreate(apiFormateada);
+          const image = imageResponse.data.url || "";
+          return {
+            Nombre: el.name,
+            PesoMaximo: el.weight.metric.split(" ")[2],
+            PesoMinimo: el.weight.metric.split(" ")[0],
+            AlturaMaxima: el.height.metric.split(" ")[2],
+            AlturaMinima: el.height.metric.split(" ")[0],
+            VidaMinima: el.life_span.split(" ")[0],
+            VidaMaxima: el.life_span.split(" ")[2],
+            Temperamento: el.temperament,
+            image: image,
+            id: el.id,
+          };
+        } catch (error) {
+          console.error("Error fetching image:", error);
+          return {
+            Nombre: el.name,
+            PesoMaximo: el.weight.metric.split(" ")[2],
+            PesoMinimo: el.weight.metric.split(" ")[0],
+            AlturaMaxima: el.height.metric.split(" ")[2],
+            AlturaMinima: el.height.metric.split(" ")[0],
+            VidaMinima: el.life_span.split(" ")[0],
+            VidaMaxima: el.life_span.split(" ")[2],
+            Temperamento: el.temperament,
+            image: "", // Set image to an empty string if fetching image fails
+            id: el.id,
+          };
+        }
+      })
+    );
+
     const dataBaseComplete = [...apiFormateada, ...dBFormateada];
-    //aqui traigo las razas desde la base de datos
-
-    // en esta linea junto ambas bases de datos usando el sprea operator
-
     res.json({ allDogsRaces: dataBaseComplete });
   } catch (error) {
     console.log(error);
+    res.status(500).json({ error: "Internal server error" });
   }
 });
+
 router.get("/dog", async (req, res) => {
   // en esta ruta solicitamos un perro por su raza enviado por query es decir
   // /dog?name = Pug
